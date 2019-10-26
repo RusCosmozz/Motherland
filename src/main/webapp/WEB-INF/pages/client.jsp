@@ -4,11 +4,12 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Bill /></title>
+    <title>Clients</title>
 </head>
 <body>
 
-<h2></h2>
+<h2><a href="/">Home page</a> </h2>
+<hr>
 
 <c:if test="${!empty clientList}">
     <table class="data">
