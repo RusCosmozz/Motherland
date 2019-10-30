@@ -1,13 +1,14 @@
 package ru.iu3.motherland.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 
 //Класс Счет
 @Entity
 @Table(name = "bill")
-public class Bill extends AbstractBaseEntity {
+public class Bill extends AbstractBaseEntity implements Serializable {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "date")

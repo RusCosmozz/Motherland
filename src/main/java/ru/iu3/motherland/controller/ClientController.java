@@ -42,13 +42,13 @@ public class ClientController {
         return modelAndView;
     }
 
-    @RequestMapping(value ="/save", method =RequestMethod.POST)
+    @RequestMapping(value = "/saveClient", method =RequestMethod.POST)
     public String save(@ModelAttribute("client") Client client){
         clientService.edit(client);
         return "redirect:/client";
     }
 
-    @RequestMapping("/delete")
+    @RequestMapping("/deleteClient")
     public String deleteCustomerForm(@RequestParam int id) {
         clientService.delete(id);
         return "redirect:/client";

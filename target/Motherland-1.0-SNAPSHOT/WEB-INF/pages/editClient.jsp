@@ -16,7 +16,7 @@
 <body>
 <div align="center">
     <h2>Edit</h2>
-    <form:form method="post" action="/save" modelAttribute="client">
+    <form:form method="post" action="/saveClient" modelAttribute="client">
     <table border="0" cellpadding="5">
         <tr>
             <td>ID:</td>

@@ -12,6 +12,7 @@
 <hr>
 
 <div align="center">
+    <h2>Clients</h2>
     <c:if test="${!empty clientList}">
     <table class="data">
         <tr>
@@ -28,7 +29,7 @@
                 <td>${client.address}</td>
                 <td>${client.phoneNum}</td>
                 <td><a href="/editClient?id=${client.id}">edit</a></td>
-                <td><a href="/delete?id=${client.id}">delete</a></td>
+                <td><a href="/deleteClient?id=${client.id}">delete</a></td>
             </tr>
         </c:forEach>
     </table>

@@ -6,9 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=utf8"
-         pageEncoding="utf8"%>
+         pageEncoding="utf8" %>
 
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,9 +17,12 @@
 </head>
 <body>
 
-<h2></h2>
+<h2><a href="/">Home page</a></h2>
+<hr>
 
-<c:if test="${!empty billList}">
+<div align="center">
+    <h2>Bill</h2>
+    <c:if test="${!empty billList}">
     <table class="data">
         <tr>
             <th>id</th>
@@ -36,14 +39,17 @@
                 <td>${bill.date}</td>
                 <td>${bill.client}</td>
                 <td>${bill.product}</td>
-                <td>${bill.countOfProd}</td>
+                <td>${bill.countOfProduct}</td>
                 <td>${bill.sum}</td>
-                <td>${bill.sumNds}</td>
-                <td><a href="delete/${bill.id}"></a></td>
+                <td>${bill.sumNDS}</td>
+                <td><a href="/editBill?id=${client.id}">edit</a></td>
+                <td><a href="/deleteBill?id=${client.id}">delete</a></td>
             </tr>
         </c:forEach>
     </table>
-</c:if>
+        <a href="/addClient">Add new</a>
+    </c:if>
+</div>
 
 </body>
 </html>

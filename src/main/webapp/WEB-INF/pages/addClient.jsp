@@ -11,7 +11,7 @@
 <body>
 <div align="center">
     <h2>New client</h2>
-    <form:form action="save" method="post" modelAttribute="client">
+    <form:form action="/saveClient" method="post" modelAttribute="client">
         <table border="0" cellpadding="5">
             <tr>
                 <td>Name: </td>
