@@ -10,7 +10,7 @@ import ru.iu3.motherland.repository.BaseRepository;
 import java.util.List;
 import java.util.Optional;
 
-
+@Service
 public abstract class AbstractService<E extends AbstractBaseEntity,R extends BaseRepository<E>> implements BaseService<E> {
 
     protected  R repository;
@@ -33,9 +33,8 @@ public abstract class AbstractService<E extends AbstractBaseEntity,R extends Bas
     }
 
     @Override
-    @Transactional
-    public Optional<E> getById(int id) {
-        return repository.findById(id);
+    public E getById(int id) {
+        return repository.getById(id);
     }
 
     @Override

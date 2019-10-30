@@ -3,12 +3,13 @@ package ru.iu3.motherland.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 //Класс Клиент
 
 @Entity
 @Table(name = "client")
-public class Client extends AbstractBaseEntity {
+public class Client extends AbstractBaseEntity implements Serializable {
 
     @Column(name = "name")
     protected String name;

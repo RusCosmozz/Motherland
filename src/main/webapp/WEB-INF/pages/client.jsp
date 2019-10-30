@@ -11,7 +11,8 @@
 <h2><a href="/">Home page</a> </h2>
 <hr>
 
-<c:if test="${!empty clientList}">
+<div align="center">
+    <c:if test="${!empty clientList}">
     <table class="data">
         <tr>
             <th>id</th>
@@ -26,11 +27,14 @@
                 <td>${client.name}</td>
                 <td>${client.address}</td>
                 <td>${client.phoneNum}</td>
-                <td><a href="delete/${client.id}"></a></td>
+                <td><a href="/editClient?id=${client.id}">edit</a></td>
+                <td><a href="/delete?id=${client.id}">delete</a></td>
             </tr>
         </c:forEach>
     </table>
+        <a href="/addClient">Add new</a>
 </c:if>
+</div>
 
 </body>
 </html>

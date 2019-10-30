@@ -8,11 +8,12 @@ import java.util.Optional;
 
 public interface BaseService<E extends AbstractBaseEntity> {
 
+
      E add(E e);
 
      void delete(int id);
 
-     Optional<E> getById(int id);
+     E getById(int id);
 
      E edit(E e);
 

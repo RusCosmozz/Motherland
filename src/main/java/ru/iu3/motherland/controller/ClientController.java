@@ -2,10 +2,7 @@ package ru.iu3.motherland.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import ru.iu3.motherland.model.Bill;
 import ru.iu3.motherland.model.Client;
@@ -14,12 +11,19 @@ import ru.iu3.motherland.service.ClientService;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Controller
+
 public class ClientController {
 
-    @Autowired
+
     private ClientService clientService;
+
+    @Autowired
+    public void setClientService(ClientService clientService) {
+        this.clientService = clientService;
+    }
 
     @RequestMapping(value = "/client",method = RequestMethod.GET)
     public ModelAndView allClients() {
@@ -30,6 +34,34 @@ public class ClientController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/editClient",method = RequestMethod.GET)
+    public ModelAndView editPage(@RequestParam int id){
+        ModelAndView modelAndView= new ModelAndView();
+        modelAndView.setViewName("editClient");
+        modelAndView.addObject("client", clientService.getById(id));
+        return modelAndView;
+    }
+
+    @RequestMapping(value ="/save", method =RequestMethod.POST)
+    public String save(@ModelAttribute("client") Client client){
+        clientService.edit(client);
+        return "redirect:/client";
+    }
+
+    @RequestMapping("/delete")
+    public String deleteCustomerForm(@RequestParam int id) {
+        clientService.delete(id);
+        return "redirect:/client";
+    }
+
+    @RequestMapping("/addClient")
+    public String newCustomerForm(Map<String, Object> model) {
+        Client client = new Client();
+        model.put("client", client);
+        return "addClient";
+    }
+
+    //TODO сделать общий начальный контроллер
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public ModelAndView home() {
         ModelAndView modelAndView=new ModelAndView();

@@ -5,5 +5,4 @@ import ru.iu3.motherland.model.Bill;
 
 @Repository
 public interface BillRepository extends BaseRepository<Bill> {
-
 }
