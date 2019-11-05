@@ -15,5 +15,11 @@
 <hr>
 <h4><a href="/bill">Bill page</a> </h4>
 <h4><a href="/client">Client page</a> </h4>
+<h4><a href="/supplier">Supplier page</a> </h4>
+<h4><a href="/transportCompany">Transport Companies page</a> </h4>
+<h4><a href="/product">Product page</a> </h4>
+<h4><a href="/invoiceExpenditure">Invoice expenditure page</a> </h4>
+<h4><a href="/invoicePurchase">Invoice purchase page</a> </h4>
+
 </body>
 </html>

@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @MappedSuperclass
 public abstract class AbstractBaseEntity {
-    @Id
+     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;

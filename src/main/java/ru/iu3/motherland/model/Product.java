@@ -12,8 +12,7 @@ public class Product extends AbstractBaseEntity {
     private String name;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "supplierId")
+    @JoinColumn(name = "supplierId",referencedColumnName = "id")
     private Supplier supplier;
 
     @Column(name = "countOfProduct")

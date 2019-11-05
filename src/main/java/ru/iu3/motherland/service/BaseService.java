@@ -8,7 +8,6 @@ import java.util.Optional;
 
 public interface BaseService<E extends AbstractBaseEntity> {
 
-
      E add(E e);
 
      void delete(int id);

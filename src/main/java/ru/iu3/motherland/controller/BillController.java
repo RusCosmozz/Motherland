@@ -10,6 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 import ru.iu3.motherland.model.Bill;
 import ru.iu3.motherland.model.Client;
 import ru.iu3.motherland.service.BillService;
+import ru.iu3.motherland.service.ClientService;
+import ru.iu3.motherland.service.ProductService;
 
 import java.util.List;
 import java.util.Map;
@@ -20,9 +22,23 @@ public class BillController {
 
     private BillService billService;
 
+    private ClientService clientService;
+
+    private ProductService productService;
+
     @Autowired
     public void setBillService(BillService billService) {
         this.billService = billService;
+    }
+
+    @Autowired
+    public void setClientService(ClientService clientService) {
+        this.clientService = clientService;
+    }
+
+    @Autowired
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
     }
 
     @RequestMapping(value = "/bill",method = RequestMethod.GET)
@@ -39,6 +55,8 @@ public class BillController {
         ModelAndView modelAndView= new ModelAndView();
         modelAndView.setViewName("editBill");
         modelAndView.addObject("bill", billService.getById(id));
+        modelAndView.addObject("clients",clientService.getAll());
+        modelAndView.addObject("products",productService.getAll());
         return modelAndView;
     }
 
@@ -58,6 +76,8 @@ public class BillController {
     public String newBillForm(Map<String, Object> model) {
         Bill bill = new Bill();
         model.put("bill", bill);
+        model.put("clients",clientService.getAll());
+        model.put("products",productService.getAll());
         return "addBill";
     }
 

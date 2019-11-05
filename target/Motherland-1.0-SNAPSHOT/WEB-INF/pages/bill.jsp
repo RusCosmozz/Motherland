@@ -13,7 +13,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf8">
-    <title>Bill /></title>
+    <title>Bills </title>
 </head>
 <body>
 
@@ -42,14 +42,13 @@
                 <td>${bill.countOfProduct}</td>
                 <td>${bill.sum}</td>
                 <td>${bill.sumNDS}</td>
-                <td><a href="/editBill?id=${client.id}">edit</a></td>
-                <td><a href="/deleteBill?id=${client.id}">delete</a></td>
+                <td><a href="/editBill?id=${bill.id}">edit</a></td>
+                <td><a href="/deleteBill?id=${bill.id}">delete</a></td>
             </tr>
         </c:forEach>
     </table>
-        <a href="/addClient">Add new</a>
     </c:if>
+    <a href="/addBill">Add new</a>
 </div>
-
 </body>
 </html>

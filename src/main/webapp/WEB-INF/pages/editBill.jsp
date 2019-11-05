@@ -29,12 +29,22 @@
                 <td><form:input path="date"/></td>
             </tr>
             <tr>
-                <td>Client Id :</td>
-                <td><form:input path="client"/></td>
+                <td>Client:</td>
+                <td><form:select path="client.id">
+                    <option value="${bill.client.id}">${bill.client.name}</option>
+                    <c:forEach items="${clients}" var="client">
+                        <option value="${client.id}">${client.name}</option>
+                    </c:forEach>
+                </form:select></td>
             </tr>
             <tr>
                 <td>Product id :</td>
-                <td><form:input path="product"/></td>
+                <td><form:select path="product.id">
+                    <option value="-1">Select a product</option>
+                    <c:forEach items="${products}" var="product">
+                        <option value="${product.id}">${product.name}</option>
+                    </c:forEach>
+                </form:select></td>
             </tr>
             <tr>
                 <td>Count of product :</td>
@@ -43,6 +53,9 @@
             <tr>
                 <td>Sum :</td>
                 <td><form:input path="sum"/></td>
+            </tr>
+            <tr>
+                <td><form:hidden  path="sumNDS"/></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="Save"></td>

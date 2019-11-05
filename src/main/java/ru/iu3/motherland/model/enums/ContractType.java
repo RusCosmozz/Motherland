@@ -6,4 +6,7 @@ package ru.iu3.motherland.model.enums;
 public enum ContractType {
     CLIENT_CONTRACT,
     SUPPLIER_CONTRACT;
+
+    ContractType() {
+    }
 }

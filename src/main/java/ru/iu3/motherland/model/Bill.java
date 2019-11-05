@@ -1,7 +1,10 @@
 package ru.iu3.motherland.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -11,17 +14,16 @@ import java.util.Date;
 public class Bill extends AbstractBaseEntity implements Serializable {
 
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     @Column(name = "date")
     private Date date;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "clientId")
+    @JoinColumn(name = "clientId",referencedColumnName = "id")
     private Client client;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "productId")
+    @JoinColumn(name = "productId",referencedColumnName = "id")
     private Product product;
 
     @Column(name = "countOfProduct")
@@ -30,6 +32,9 @@ public class Bill extends AbstractBaseEntity implements Serializable {
     @Column(name = "sum")
     private int sum;
 
+
+    @GeneratedValue
+    @Column(name = "sumNDS")
     private double sumNDS;
 
 
@@ -56,10 +61,11 @@ public class Bill extends AbstractBaseEntity implements Serializable {
 
 
     public Date getDate() {
+
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Date date){
         this.date = date;
     }
 
@@ -90,8 +96,11 @@ public class Bill extends AbstractBaseEntity implements Serializable {
         this.sum = sum;
     }
 
+    public void setSumNDS() {
+        this.sumNDS = sum*1.2;
+    }
 
     public double getSumNDS() {
-        return sum*1.2;
+        return Math.round(sum*1.2);
     }
 }
