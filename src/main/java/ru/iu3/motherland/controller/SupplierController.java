@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import ru.iu3.motherland.model.Client;
 import ru.iu3.motherland.model.Supplier;
+import ru.iu3.motherland.service.ContractService;
 import ru.iu3.motherland.service.SupplierService;
 
 import java.util.List;
@@ -18,6 +18,13 @@ import java.util.Map;
 public class SupplierController {
 
     private SupplierService supplierService;
+
+    private ContractService contractService;
+
+    @Autowired
+    public void setContractService(ContractService contractService) {
+        this.contractService = contractService;
+    }
 
     @Autowired
     public void setSupplierService(SupplierService supplierService) {
@@ -38,6 +45,7 @@ public class SupplierController {
         ModelAndView modelAndView= new ModelAndView();
         modelAndView.setViewName("editSupplier");
         modelAndView.addObject("supplier", supplierService.getById(id));
+        modelAndView.addObject("contracts",contractService.getAll());
         return modelAndView;
     }
 
@@ -57,6 +65,7 @@ public class SupplierController {
     public String newCustomerForm(Map<String, Object> model) {
         Supplier supplier = new Supplier();
         model.put("supplier", supplier);
+        model.put("contracts",contractService.getAll());
         return "addSupplier";
     }
 }

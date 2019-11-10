@@ -4,14 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import ru.iu3.motherland.model.Bill;
 import ru.iu3.motherland.model.Client;
-import ru.iu3.motherland.service.BillService;
 import ru.iu3.motherland.service.ClientService;
+import ru.iu3.motherland.service.ContractService;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @Controller
 
@@ -19,6 +17,13 @@ public class ClientController {
 
 
     private ClientService clientService;
+
+    private ContractService contractService;
+
+    @Autowired
+    public void setContractService(ContractService contractService) {
+        this.contractService = contractService;
+    }
 
     @Autowired
     public void setClientService(ClientService clientService) {
@@ -39,6 +44,7 @@ public class ClientController {
         ModelAndView modelAndView= new ModelAndView();
         modelAndView.setViewName("editClient");
         modelAndView.addObject("client", clientService.getById(id));
+        modelAndView.addObject("contracts",contractService.getAll());
         return modelAndView;
     }
 
@@ -58,19 +64,15 @@ public class ClientController {
     public String newCustomerForm(Map<String, Object> model) {
         Client client = new Client();
         model.put("client", client);
+        model.put("contracts",contractService.getAll());
         return "addClient";
     }
 
-    //TODO сделать общий начальный контроллер
+   /* //TODO сделать общий начальный контроллер
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public ModelAndView home() {
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("index");
         return modelAndView;
-    }
-
-
-
-
-
+    }*/
 }

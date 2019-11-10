@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import ru.iu3.motherland.model.Supplier;
 import ru.iu3.motherland.model.TransportCompany;
 import ru.iu3.motherland.service.TransportCompanyService;
 

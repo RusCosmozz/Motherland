@@ -1,7 +1,7 @@
 package ru.iu3.motherland.model;
 
 
-import ru.iu3.motherland.model.enums.ContractType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,43 +13,20 @@ import java.util.Date;
 @Table(name = "contract")
 public class Contract extends AbstractBaseEntity{
 
-    @Column(name = "contractType")
-    @Enumerated(EnumType.STRING)
-    private ContractType contractType;
-
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "clientId")
-    private Client client;
 
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     @Column(name = "date")
     private Date date;
+
+
 
     public Contract() {
     }
 
-    public Contract(Integer id, ContractType contractType, Client client, Date date) {
+    public Contract(Integer id, Date date) {
         super(id);
-        this.contractType = contractType;
-        this.client = client;
         this.date = date;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
-    public ContractType getContractType() {
-        return contractType;
-    }
-
-    public void setContractType(ContractType contractType) {
-        this.contractType = contractType;
     }
 
     public Date getDate() {
@@ -59,4 +36,5 @@ public class Contract extends AbstractBaseEntity{
     public void setDate(Date date) {
         this.date = date;
     }
+
 }

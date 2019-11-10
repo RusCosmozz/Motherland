@@ -11,13 +11,14 @@
 
 <html>
 <head>
-    <title>Edit</title>
+    <title>Изменить клиента</title>
+    <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div align="center">
-    <h2>Edit</h2>
+    <h2>Изменить клиента</h2>
     <form:form method="post" action="/saveClient" modelAttribute="client">
-    <table border="0" cellpadding="5">
+    <table>
         <tr>
             <td>ID:</td>
             <td>${client.id}
@@ -25,19 +26,28 @@
             </td>
         </tr>
         <tr>
-            <td>Name :</td>
+            <td>Название :</td>
             <td><form:input path="name"/></td>
         </tr>
         <tr>
-            <td>Address :</td>
+            <td>Адрес :</td>
             <td><form:input path="address"/></td>
         </tr>
         <tr>
-            <td>Phone Number :</td>
+            <td>Номер телефона :</td>
             <td><form:input path="phoneNum"/></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" value="Save"></td>
+            <td>ID Договора:</td>
+            <td><form:select path="contract.id">
+                <option value="${client.contract.id}">${client.contract.id}</option>
+                <c:forEach items="${contracts}" var="contract">
+                    <option value="${contract.id}">${contract.id}</option>
+                </c:forEach>
+            </form:select></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="submit" value="Сохранить"></td>
         </tr>
     </table>
 </form:form></div>

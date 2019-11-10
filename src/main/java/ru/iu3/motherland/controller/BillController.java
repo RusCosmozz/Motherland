@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import ru.iu3.motherland.model.Bill;
-import ru.iu3.motherland.model.Client;
 import ru.iu3.motherland.service.BillService;
 import ru.iu3.motherland.service.ClientService;
 import ru.iu3.motherland.service.ProductService;

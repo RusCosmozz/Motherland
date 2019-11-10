@@ -1,0 +1,230 @@
+
+html {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    background: #FDF4E3;
+
+}
+
+table {
+    overflow: hidden;
+    border: 1px solid #d3d3d3;
+    background: #fefefe;
+    width: 70%;
+   margin: 0 auto;
+    -moz-border-radius: 5px; /* FF1+ */
+    -webkit-border-radius: 5px; /* Saf3-4 */
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 18px 28px 18px;
+    text-align: center;
+}
+
+th {
+    padding-top: 22px;
+    text-shadow: 1px 1px 1px #fff;
+    background: #e8eaeb;
+}
+
+td {
+    border-top: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+
+tr.odd-row td {
+    background: #f6f6f6;
+}
+
+td.first, th.first {
+    text-align: left
+}
+
+td.last {
+    border-right: none;
+}
+
+td {
+    background: linear-gradient(45deg, #fefefe, #f1f1f1);
+
+}
+
+tr.odd-row td {
+    background: linear-gradient(90deg, #f6f6f6, #f1f1f1);
+}
+
+th {
+    background: linear-gradient(90deg, #e8eaeb, #ededed);
+}
+
+tr:first-child th.first {
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px; /* Saf3-4 */
+}
+
+tr:first-child th.last {
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-right-radius: 5px; /* Saf3-4 */
+}
+
+tr:last-child td.first {
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-left-radius: 5px; /* Saf3-4 */
+}
+
+tr:last-child td.last {
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius: 5px; /* Saf3-4 */
+}
+
+
+header {
+    width: 99.6%;
+    background: #d9c6c4;
+    height: 70px;
+    border: 3px solid #d9c6c4;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 29px;
+    padding-top: 12px;
+    text-align: center;
+
+}
+.left{
+    width: 48%;
+    float: left;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.right{
+    width: 48%;
+    float: right;
+    text-align: right;
+    padding-top: 2px;
+    padding-right: 15px;
+}
+
+
+a {
+    color: #e74c3c;
+    position: relative;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+a:hover {
+    color: #222;
+}
+
+a:before, a:after {
+    content: '';
+    background: #e74c3c;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+a:before {
+    top: 0;
+    left: 0;
+}
+
+a:after {
+    top: 100%;
+    right: 0;
+}
+
+a:hover:before, a:hover:after {
+    width: 100%;
+}
+
+.container {
+    text-align: center;
+
+}
+
+.main {
+    padding-top: 100px;
+    padding-bottom: 395px;
+    border: solid #d9c6c4;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.layer1 {
+    display: inline-block;
+    text-align: center;
+    padding-top: 30px; /* Поля вокруг текста */
+    padding-bottom: 50px;
+    float: left; /* Обтекание по правому краю */
+    width: 49.9%;
+    height: 500px;
+    border-right: 1px solid silver;
+}
+
+.layer2 {
+    display: inline-block;
+    text-align: center;
+    padding-top: 19px; /* Поля вокруг текста */
+    padding-bottom: 60px;
+    float: right; /* Обтекание по правому краю */
+    width: 49.9%; /* Ширина слоя */
+    height: 500px;
+}
+
+.layer1 p, .layer1 a, .layer2 p, .layer2 a {
+    padding-top: 10px;
+}
+
+.layer1 img, .layer2 img {
+    padding-top: 80px;
+    width: 60px;
+}
+
+.sales1 {
+    display: inline-block;
+    text-align: center;
+    padding-top: 30px; /* Поля вокруг текста */
+    padding-bottom: 50px;
+    float: left; /* Обтекание по правому краю */
+    width: 49.9%;
+    height: 500px;
+    border-right: 0.5px solid silver;
+}
+
+.sales2 {
+    display: inline-block;
+    text-align: center;
+    padding-top: 30px; /* Поля вокруг текста */
+    padding-bottom: 60px;
+    float: right; /* Обтекание по правому краю */
+    width: 49.9%; /* Ширина слоя */
+    height: 500px;
+}
+
+
+.sales1 p, .sales1 a, .sales2 p, .sales2 a {
+    padding-top: 10px;
+    font-size: 25px;
+}
+
+.sales1 img, .sales2 img {
+    padding-top: 80px;
+    width: 120px;
+}
+
+

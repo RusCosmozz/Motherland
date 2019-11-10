@@ -7,9 +7,9 @@ import ru.iu3.motherland.model.Product;
 @Repository
 public interface ProductRepository  extends BaseRepository<Product> {
 
- /* @Query("from Product where p.price = (select max (price) from product )")
+  @Query("from Product where price = (select max (price) from Product )")
   Product getProductByMaxPrice();
 
-  @Query("from product where price = (select min (price) from product )")
-  Product getProductByMinPrice();*/
+  @Query("from Product where price = (select min (price) from Product )")
+  Product getProductByMinPrice();
 }

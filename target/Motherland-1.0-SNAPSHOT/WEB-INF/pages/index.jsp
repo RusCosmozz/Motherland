@@ -1,3 +1,6 @@
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Mi
@@ -9,17 +12,15 @@
 <html>
 <head>
     <title>Home</title>
+    <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<h2>Home page</h2>
-<hr>
-<h4><a href="/bill">Bill page</a> </h4>
-<h4><a href="/client">Client page</a> </h4>
-<h4><a href="/supplier">Supplier page</a> </h4>
-<h4><a href="/transportCompany">Transport Companies page</a> </h4>
-<h4><a href="/product">Product page</a> </h4>
-<h4><a href="/invoiceExpenditure">Invoice expenditure page</a> </h4>
-<h4><a href="/invoicePurchase">Invoice purchase page</a> </h4>
+<div id = "wrap">
+    <header><div class = "title">Motherlands</div></header>
+</div>
+<div class="main">
+    <p>Чтобы продолжить работу <a href="/login" class="cl-effect-15">войдите</a>  в систему</p>
 
+</div>
 </body>
 </html>

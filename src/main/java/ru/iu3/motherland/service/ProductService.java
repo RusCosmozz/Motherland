@@ -13,7 +13,7 @@ public class ProductService extends AbstractService<Product, ProductRepository> 
         super(repository);
     }
 
-  /*  @Transactional
+    @Transactional
     public Product getProductByMaxPrice() {
         return repository.getProductByMaxPrice();
     }
@@ -22,5 +22,5 @@ public class ProductService extends AbstractService<Product, ProductRepository> 
     @Transactional
     public Product getProductByMinPrice() {
         return repository.getProductByMinPrice();
-    }*/
+    }
 }

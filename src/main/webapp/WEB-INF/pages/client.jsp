@@ -4,23 +4,31 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Clients</title>
+    <title>Клиенты</title>
+    <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
-<h2><a href="/">Home page</a> </h2>
-<hr>
+<div >
+    <header>
+        <div class = "title">
+            <div class="right"><a href="/" >Выйти</a></div>
+            <div class="left"><a href="/salesPages">Главная страница</a></div>
+        </div>
+    </header>
+</div>
 
 <div align="center">
-    <h2>Clients</h2>
+    <h2>Клиенты</h2>
     <c:if test="${!empty clientList}">
-    <table class="data">
+    <table>
         <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>address</th>
-            <th>phoneNum</th>
-
+            <th>ID</th>
+            <th>Название</th>
+            <th>Адрес</th>
+            <th>Номер телефона</th>
+            <th>ID договора</th>
+            <th colspan="2">Действия</th>
         </tr>
         <c:forEach var="client" items="${clientList}">
             <tr>
@@ -28,12 +36,14 @@
                 <td>${client.name}</td>
                 <td>${client.address}</td>
                 <td>${client.phoneNum}</td>
-                <td><a href="/editClient?id=${client.id}">edit</a></td>
-                <td><a href="/deleteClient?id=${client.id}">delete</a></td>
+                <td>${client.contract.id} </td>
+                <td><a href="/editClient?id=${client.id}">Изменить</a></td>
+                <td><a href="/deleteClient?id=${client.id}">Удалить</a></td>
             </tr>
         </c:forEach>
     </table>
-        <a href="/addClient">Add new</a>
+        <p></p>
+        <a href="/addClient">Новый клиент</a>
 </c:if>
 </div>
 

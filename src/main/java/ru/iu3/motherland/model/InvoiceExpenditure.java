@@ -1,33 +1,34 @@
 package ru.iu3.motherland.model;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "invoiceexpenditure")
-public class InvoiceExpenditure extends AbstractBaseEntity {
+public class InvoiceExpenditure extends AbstractBaseEntity implements Serializable {
 
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     @Column(name = "date")
     private Date date;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "clientId")
+    @JoinColumn(name = "clientId",referencedColumnName = "id")
     private Client client;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "productId")
+    @JoinColumn(name = "productId",referencedColumnName = "id")
     private Product product;
 
     @Column(name = "countOfProduct")
     private int countOfProduct;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "billId")
+    @JoinColumn(name = "billId",referencedColumnName = "id")
     private Bill bill;
 
     public InvoiceExpenditure() {

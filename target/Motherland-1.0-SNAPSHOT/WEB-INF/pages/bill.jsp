@@ -13,35 +13,43 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf8">
-    <title>Bills </title>
+    <title>Счета </title>
+    <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-
-<h2><a href="/">Home page</a></h2>
-<hr>
+<div >
+    <header>
+        <div class = "title">
+            <div class="right"><a href="/" >Выйти</a></div>
+            <div class="left"><a href="/directorPages">Главная страница</a></div>
+        </div>
+    </header>
+</div>
 
 <div align="center">
-    <h2>Bill</h2>
+    <h2>Счета</h2>
     <c:if test="${!empty billList}">
-    <table class="data">
+    <table>
         <tr>
-            <th>id</th>
-            <th>date</th>
-            <th>client id</th>
-            <th>prod id</th>
-            <th>count of prod</th>
-            <th>sum</th>
-            <th>sumNds</th>
+            <th>ID</th>
+            <th>Дата</th>
+            <th>ID Клиента</th>
+            <th>ID Товара</th>
+            <th>Количество товара</th>
+            <th>Сумма счета</th>
+            <%--<th>Сумма с НДС</th>--%>
+            <th colspan="2">Action</th>
+
         </tr>
         <c:forEach items="${billList}" var="bill">
             <tr>
                 <td>${bill.id}</td>
                 <td>${bill.date}</td>
-                <td>${bill.client}</td>
-                <td>${bill.product}</td>
-                <td>${bill.countOfProduct}</td>
+                <td><a href="/client">${bill.client.id}</a> </td>
+                <td><a href="/product">${bill.product.id}</a> </td>
+                <td  align="center">${bill.countOfProduct}</td>
                 <td>${bill.sum}</td>
-                <td>${bill.sumNDS}</td>
+                <%--<td>${bill.sumNDS}</td>--%>
                 <td><a href="/editBill?id=${bill.id}">edit</a></td>
                 <td><a href="/deleteBill?id=${bill.id}">delete</a></td>
             </tr>

@@ -1,10 +1,11 @@
 package ru.iu3.motherland.model;
 
+import org.decimal4j.util.DoubleRounder;
+import org.hibernate.annotations.Formula;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -30,24 +31,21 @@ public class Bill extends AbstractBaseEntity implements Serializable {
     private int countOfProduct;
 
     @Column(name = "sum")
-    private int sum;
+    private double sum;
 
 
-    @GeneratedValue
-    @Column(name = "sumNDS")
-    private double sumNDS;
 
 
     public Bill() {
     }
 
-    public Bill(Integer id, Date date, Client client, Product product, int countOfProduct, int sum) {
+    public Bill(Integer id, Date date, Client client, Product product, int countOfProduct) {
         super(id);
         this.date = date;
         this.client = client;
         this.product = product;
         this.countOfProduct = countOfProduct;
-        this.sum = sum;
+        this.sum=product.getPrice()*countOfProduct;
     }
 
 
@@ -61,7 +59,6 @@ public class Bill extends AbstractBaseEntity implements Serializable {
 
 
     public Date getDate() {
-
         return date;
     }
 
@@ -88,19 +85,13 @@ public class Bill extends AbstractBaseEntity implements Serializable {
     }
 
 
-    public int getSum() {
-        return sum;
+    public double getSum() {
+        return DoubleRounder.round(product.getPrice()*countOfProduct,2);
     }
 
-    public void setSum(int sum) {
-        this.sum = sum;
+   public void setSum() {
+        this.sum = product.getPrice()*countOfProduct;
     }
 
-    public void setSumNDS() {
-        this.sumNDS = sum*1.2;
-    }
 
-    public double getSumNDS() {
-        return Math.round(sum*1.2);
-    }
 }

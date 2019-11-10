@@ -1,12 +1,13 @@
 package ru.iu3.motherland.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 //Класс Товар
 @Entity
 @Table(name = "product")
-public class Product extends AbstractBaseEntity {
+public class Product extends AbstractBaseEntity implements Serializable {
 
     @Column(name = "name")
     private String name;
@@ -19,7 +20,7 @@ public class Product extends AbstractBaseEntity {
     private int countOfProduct;
 
     @Column(name = "price")
-    private int price;
+    private double price;
 
     public Product() {
     }
@@ -57,11 +58,11 @@ public class Product extends AbstractBaseEntity {
         this.countOfProduct = countOnWarehouse;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 }

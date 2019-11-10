@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import ru.iu3.motherland.model.Client;
 import ru.iu3.motherland.model.Product;
 import ru.iu3.motherland.service.ProductService;
 import ru.iu3.motherland.service.SupplierService;
 
+import javax.jws.WebParam;
 import java.util.List;
 import java.util.Map;
 
@@ -49,6 +49,22 @@ public class ProductController {
         modelAndView.setViewName("editProduct");
         modelAndView.addObject("product", productService.getById(id));
         modelAndView.addObject("suppliers",supplierService.getAll());
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/maxPrice",method = RequestMethod.GET)
+    public ModelAndView maxPrice(){
+        ModelAndView modelAndView= new ModelAndView();
+        modelAndView.setViewName("maxPrice");
+        modelAndView.addObject("product",productService.getProductByMaxPrice());
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/minPrice",method = RequestMethod.GET)
+    public ModelAndView minPrice(){
+        ModelAndView modelAndView= new ModelAndView();
+        modelAndView.setViewName("minPrice");
+        modelAndView.addObject("product",productService.getProductByMinPrice());
         return modelAndView;
     }
 

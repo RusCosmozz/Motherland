@@ -4,11 +4,12 @@ package ru.iu3.motherland.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 //Класс Транспортной компании
 @Entity
 @Table(name = "transportcompany")
-public class TransportCompany extends AbstractBaseEntity{
+public class TransportCompany extends AbstractBaseEntity implements Serializable {
 
     @Column(name = "name")
     protected String name;

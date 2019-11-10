@@ -9,38 +9,48 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Invoice Expenditure</title>
+    <title>Расходные накладные</title>
+    <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<h2><a href="/">Home page</a></h2>
-<hr>
+<div >
+    <header>
+        <div class = "title">
+            <div class="right"><a href="/" >Выйти</a></div>
+            <div class="left"><a href="/distributionPages">Главная страница</a></div>
+        </div>
+    </header>
+</div>
+
 <div align="center">
-    <h2>Invoice Expenditure</h2>
+    <h2>Расходные накладные</h2>
     <c:if test="${!empty invoiceExpenditureList}">
-        <table class="data">
+        <table>
             <tr>
-                <th>id</th>
-                <th>date</th>
-                <th>client Id</th>
-                <th>product id</th>
-                <th>count of product</th>
-                <th>bill Id</th>
+                <th>Id</th>
+                <th>Дата</th>
+                <th>Id Клиента</th>
+                <th>Id Товара</th>
+                <th>Количество товара</th>
+                <th>Id Счета</th>
+                <th colspan="2">Действия</th>
             </tr>
             <c:forEach var="invoice" items="${invoiceExpenditureList}">
                 <tr>
                     <td>${invoice.id}</td>
                     <td>${invoice.date}</td>
-                    <td>${invoice.client}</td>
-                    <td>${invoice.product}</td>
-                    <td>${invoice.countOfProduct}</td>
-                    <td>${invoice.bill}</td>
-                    <td><a href="/editInvoiceExpenditure?id=${invoice.id}">edit</a></td>
-                    <td><a href="/deleteInvoiceExpenditure?id=${invoice.id}">delete</a></td>
+                    <td><a href="/client">${invoice.bill.client.id}</a> </td>
+                    <td><a href="/product">${invoice.bill.product.id}</a> </td>
+                    <td  align="center">${invoice.bill.countOfProduct}</td>
+                    <td><a href="/bill">${invoice.bill.id}</a></td>
+                    <td><a href="/editInvoiceExpenditure?id=${invoice.id}">Изменить</a></td>
+                    <td><a href="/deleteInvoiceExpenditure?id=${invoice.id}">Удалить</a></td>
                 </tr>
             </c:forEach>
         </table>
     </c:if>
-    <a href="/addInvoiceExpenditure">Add new</a>
+    <p></p>
+    <a href="/addInvoiceExpenditure">Новая накладная</a>
 </div>
 </body>
 </html>

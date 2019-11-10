@@ -1,14 +1,13 @@
 package ru.iu3.motherland.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 
 //Класс Поставщик
 @Entity
 @Table(name = "supplier")
-public class Supplier extends AbstractBaseEntity {
+public class Supplier extends AbstractBaseEntity implements Serializable {
 
     @Column(name = "name")
     protected String name;
@@ -19,14 +18,27 @@ public class Supplier extends AbstractBaseEntity {
     @Column(name = "phoneNum")
     protected String phoneNum;
 
+    @OneToOne
+    @JoinColumn(name = "contractId",referencedColumnName = "id")
+    private Contract contract;
+
     public Supplier() {
     }
 
-    public Supplier(Integer id, String name, String phoneNum, String address) {
+    public Supplier(Integer id, String name, String address, String phoneNum, Contract contract) {
         super(id);
         this.name = name;
-        this.phoneNum = phoneNum;
         this.address = address;
+        this.phoneNum = phoneNum;
+        this.contract = contract;
+    }
+
+    public Contract getContract() {
+        return contract;
+    }
+
+    public void setContract(Contract contract) {
+        this.contract = contract;
     }
 
     public String getPhoneNum() {
