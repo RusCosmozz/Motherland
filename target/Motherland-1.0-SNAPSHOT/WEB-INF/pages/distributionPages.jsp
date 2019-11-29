@@ -41,6 +41,5 @@
     <br>
     <p>Просмотреть страницу <a href="/invoicePurchase">приходных накладных</a></p>
 </div>
-
 </body>
 </html>

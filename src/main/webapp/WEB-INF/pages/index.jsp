@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id = "wrap">
-    <header><div class = "title">Motherlands</div></header>
+    <header><div class = "title">Motherland</div></header>
 </div>
 <div class="main">
     <p>Чтобы продолжить работу <a href="/login" class="cl-effect-15">войдите</a>  в систему</p>

@@ -44,7 +44,8 @@
                 <c:forEach items="${contracts}" var="contract">
                     <option value="${contract.id}">${contract.id}</option>
                 </c:forEach>
-            </form:select></td>
+            </form:select>
+            </td>
         </tr>
         <tr>
             <td colspan="4"><input type="submit" value="Сохранить"></td>

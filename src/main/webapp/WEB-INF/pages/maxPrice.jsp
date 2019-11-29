@@ -31,6 +31,7 @@
                     <td>${product.price}</td>
                 </tr>
         </table>
+    <p></p>
     <a href="/product">Полный список</a>
 </div>
 </body>

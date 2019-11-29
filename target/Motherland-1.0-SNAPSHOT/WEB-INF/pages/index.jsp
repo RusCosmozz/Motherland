@@ -11,12 +11,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Home</title>
+    <title>Motherland</title>
     <link href="<c:url value="/res/style.css"/>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id = "wrap">
-    <header><div class = "title">Motherlands</div></header>
+    <header><div class = "title">Motherland</div></header>
 </div>
 <div class="main">
     <p>Чтобы продолжить работу <a href="/login" class="cl-effect-15">войдите</a>  в систему</p>

@@ -1,12 +1,7 @@
 package ru.iu3.motherland.model;
 
 
-import org.springframework.stereotype.Controller;
-import ru.iu3.motherland.model.enums.UserRoleEnum;
-
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Set;
 
 @Entity
 @Table(name = "user")
@@ -18,15 +13,14 @@ public class User extends AbstractBaseEntity {
     private String password;
 
     @Column
-    @Enumerated(EnumType.STRING)
-    private UserRoleEnum role;
+    private String role;
 
 
 
     public User() {
     }
 
-    public User(Integer id, String username, String password, UserRoleEnum role) {
+    public User(Integer id, String username, String password, String role) {
         super(id);
         this.username = username;
         this.password = password;
@@ -50,11 +44,11 @@ public class User extends AbstractBaseEntity {
         this.password = password;
     }
 
-    public UserRoleEnum getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(UserRoleEnum role) {
+    public void setRole(String role) {
         this.role = role;
     }
 

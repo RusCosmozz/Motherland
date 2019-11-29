@@ -24,7 +24,7 @@
 
 <div align="center">
     <h2>Товары</h2>
-    <a href="/maxPrice">Найти самый дорогой товар</a>
+    <a href="/maxPrice">Найти самый дорогой товар       </a>
     <a href="/minPrice">Найти самый дешевый товар</a>
     <c:if test="${!empty productList}">
         <table >
@@ -41,7 +41,7 @@
                 <tr>
                     <td>${product.id}</td>
                     <td>${product.name}</td>
-                    <td><a href="/product">${product.supplier.id}</a> </td>
+                    <td>${product.supplier.id}</td>
                     <td>${product.countOnWarehouse}</td>
                     <td>${product.price}</td>
                     <td><a href="/editProduct?id=${product.id}">Изменить</a></td>
@@ -50,6 +50,7 @@
             </c:forEach>
         </table>
     </c:if>
+    <p></p>
     <a href="/addProduct">Новый товар</a>
 </div>
 

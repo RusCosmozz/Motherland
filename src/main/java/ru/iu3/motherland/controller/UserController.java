@@ -44,11 +44,11 @@ public class UserController {
     public String password(@ModelAttribute("user") User user,String password,Map<String, Object> model) {
         if(userService.findByUsername(user.getUsername()).getPassword().equals(password)){
             switch (user.getUsername()){
-                case "director":
+                case "Морозов А.Н.":
                     return "directorPages";
-                case "sales manager":
+                case "Смирнов Е.А.":
                     return "salesPages";
-                case"distrib. manager":
+                case"Шаповалов С.И.":
                     return "distributionPages";
             }
         }

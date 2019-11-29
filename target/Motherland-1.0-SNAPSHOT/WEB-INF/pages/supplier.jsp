@@ -24,7 +24,7 @@
 
 
 <div align="center">
-    <h2>Клиенты</h2>
+    <h2>Поставщики</h2>
     <c:if test="${!empty supplierList}">
         <table>
             <tr>
@@ -42,7 +42,7 @@
                     <td>${supplier.name}</td>
                     <td>${supplier.address}</td>
                     <td>${supplier.phoneNum}</td>
-                    <td><a href="">${supplier.contract.id}</a></td>
+                    <td>${supplier.contract.id}</td>
                     <td><a href="/editSupplier?id=${supplier.id}">Изменить</a></td>
                     <td><a href="/deleteSupplier?id=${supplier.id}">Удалить</a></td>
                 </tr>
@@ -50,6 +50,7 @@
         </table>
 
     </c:if>
+    <p></p>
     <a href="/addSupplier">Новый поставщик</a>
 </div>
 </body>

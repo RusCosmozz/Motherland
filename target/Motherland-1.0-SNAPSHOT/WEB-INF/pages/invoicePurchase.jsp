@@ -40,8 +40,8 @@
                 <tr>
                     <td>${invoice.id}</td>
                     <td>${invoice.date}</td>
-                    <td><a href="/supplier">${invoice.supplier.id}</a> </td>
-                    <td><a href="/transportCompany">${invoice.transportCompany.id}</a> </td>
+                    <td>${invoice.supplier.id} </td>
+                    <td>${invoice.transportCompany.id} </td>
                     <td><a href="/product"> ${invoice.product.id}</a></td>
                     <td  align="center">${invoice.countOfProduct}</td>
                     <td><a href="/editInvoicePurchase?id=${invoice.id}">Изменить</a></td>
@@ -50,6 +50,7 @@
             </c:forEach>
         </table>
     </c:if>
+    <p></p>
     <a href="/addInvoicePurchase">Новая накладная</a>
 </div>
 </body>

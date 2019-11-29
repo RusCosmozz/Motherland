@@ -37,7 +37,6 @@
             <th>ID Товара</th>
             <th>Количество товара</th>
             <th>Сумма счета</th>
-            <%--<th>Сумма с НДС</th>--%>
             <th colspan="2">Action</th>
 
         </tr>
@@ -45,11 +44,10 @@
             <tr>
                 <td>${bill.id}</td>
                 <td>${bill.date}</td>
-                <td><a href="/client">${bill.client.id}</a> </td>
-                <td><a href="/product">${bill.product.id}</a> </td>
+                <td>${bill.client.id} </td>
+                <td>${bill.product.id} </td>
                 <td  align="center">${bill.countOfProduct}</td>
                 <td>${bill.sum}</td>
-                <%--<td>${bill.sumNDS}</td>--%>
                 <td><a href="/editBill?id=${bill.id}">edit</a></td>
                 <td><a href="/deleteBill?id=${bill.id}">delete</a></td>
             </tr>
@@ -57,7 +55,7 @@
     </table>
     </c:if>
     <p></p>
-    <a href="/addBill">Add new</a>
+    <a href="/addBill">Новый счет</a>
 </div>
 </body>
 </html>

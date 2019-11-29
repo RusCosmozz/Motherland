@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Mi
@@ -28,7 +29,7 @@
                 <td><form:input path="date" /></td>
             </tr>
             <tr>
-                <td><input type="submit" value="Сохранить"></td>
+                <td colspan="2"><input type="submit" value="Сохранить"></td>
             </tr>
         </table>
     </form:form>

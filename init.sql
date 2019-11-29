@@ -250,3 +250,14 @@ INSERT INTO `Motherland`.`transportcompany` (`id`, `name`, `address`, `phoneNum`
 
 COMMIT;
 
+-- -----------------------------------------------------
+-- Data for table `Motherland`.`transportcompany`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `Motherland`;
+INSERT INTO `Motherland`.`user` (`id`, `username`, `password`, `role`) VALUES (1, 'Морозов А.Н.', 'director', 'director');
+INSERT INTO `Motherland`.`user` (`id`, `username`, `password`, `role`) VALUES (1, 'Смирнов Е.А.', '1234', 'sales manager');
+INSERT INTO `Motherland`.`user` (`id`, `username`, `password`, `role`) VALUES (1, 'Шаповалов С.И.', '1234', 'distrib. manager');
+
+COMMIT;
+

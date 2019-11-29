@@ -40,6 +40,7 @@
             </c:forEach>
         </table>
     </c:if>
+    <p></p>
     <a href="/addContract">Новый договор</a>
 </div>
 </body>

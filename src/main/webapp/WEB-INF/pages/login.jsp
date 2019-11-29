@@ -28,7 +28,6 @@
         <tr>
             <th>ID</th>
             <th>Имя</th>
-            <th>Роль</th>
             <th >Действие</th>
 
         </tr>
@@ -36,7 +35,6 @@
             <tr>
                 <td>${user.id}</td>
                 <td>${user.username}</td>
-                <td>${user.role}</td>
                 <td><a href="/password?id=${user.id}">Войти</a></td>
             </tr>
         </c:forEach>

@@ -1,14 +1,12 @@
 package ru.iu3.motherland.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.iu3.motherland.model.AbstractBaseEntity;
 import ru.iu3.motherland.repository.BaseRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public abstract class AbstractService<E extends AbstractBaseEntity,R extends BaseRepository<E>> implements BaseService<E> {

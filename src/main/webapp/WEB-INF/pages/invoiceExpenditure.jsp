@@ -39,10 +39,10 @@
                 <tr>
                     <td>${invoice.id}</td>
                     <td>${invoice.date}</td>
-                    <td><a href="/client">${invoice.bill.client.id}</a> </td>
+                    <td>${invoice.bill.client.id} </td>
                     <td><a href="/product">${invoice.bill.product.id}</a> </td>
                     <td  align="center">${invoice.bill.countOfProduct}</td>
-                    <td><a href="/bill">${invoice.bill.id}</a></td>
+                    <td>${invoice.bill.id}</td>
                     <td><a href="/editInvoiceExpenditure?id=${invoice.id}">Изменить</a></td>
                     <td><a href="/deleteInvoiceExpenditure?id=${invoice.id}">Удалить</a></td>
                 </tr>

@@ -46,6 +46,7 @@
         </table>
 
     </c:if>
+    <p></p>
     <a href="/addTransportCompany">Новая тр. компания</a>
 </div>
 </body>

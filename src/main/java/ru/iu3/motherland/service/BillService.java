@@ -8,11 +8,8 @@ import ru.iu3.motherland.repository.BillRepository;
 @Service
 public class BillService extends AbstractService<Bill, BillRepository>  {
 
-
-
     public BillService(BillRepository repository) {
         super(repository);
     }
-
 
 }

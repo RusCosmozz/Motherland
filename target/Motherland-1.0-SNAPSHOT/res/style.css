@@ -47,7 +47,7 @@ td.last {
 }
 
 td {
-    background: linear-gradient(45deg, #fefefe, #f1f1f1);
+    background: linear-gradient(45deg, #d9c6c4, #dcc4c1);
 
 }
 
@@ -56,7 +56,7 @@ tr.odd-row td {
 }
 
 th {
-    background: linear-gradient(90deg, #e8eaeb, #ededed);
+    background: linear-gradient(90deg, #b99592, #d9c6c4);
 }
 
 tr:first-child th.first {
