@@ -10,5 +10,6 @@ import ru.iu3.motherland.model.AbstractBaseEntity;
 
 public interface BaseRepository<E extends AbstractBaseEntity> extends CrudRepository<E,Integer> {
 
-    E getById(Integer integer);
+    //Чтобы не возрващать Optional сделаем свою реализацию
+    E getById(Integer id);
 }
